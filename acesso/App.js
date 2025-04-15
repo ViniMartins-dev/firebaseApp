@@ -15,7 +15,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name = "Splash"     component={SplashScreen}    options={{headerShown: false}} />
         <Stack.Screen name = "Login"      component={LoginScreen}     options={{headerShown: false}} />
-      <Stack.Screen name = "Registro"     component={RegistroScreen}/>
+        <Stack.Screen name = "Registro"   component={RegistroScreen}/>
         <Stack.Screen name = "Home"       component={HomeScreen}      options={{headerLeft: () => null}} />
         <Stack.Screen name = "Perfil"     component={PerfilScreen} />
       </Stack.Navigator>
