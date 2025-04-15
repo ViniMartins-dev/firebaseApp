@@ -19,8 +19,38 @@ const RegistroScreen = ({navigation}) => {
                 name, bio
             });
 
-            
+            Alert.alert("Sucesso!", "Usuário cadastrado com sucesso!",  [
+                { text: 'OK', onPress: () => navigation.replace('Home') }
+            ]);
+        } catch (e) {
+            Alert.alert('Erro', 'Não foi possivel cadastrar. Tente novamente.')
         }
     }
 
+    return (
+        <View style={StyleSheet.container}>
+            <Text>Cadastro</Text>
+            <TextInput style={StyleSheet.input} placeholder="Nome"  value={name}      onChangeText={setName} />
+            <TextInput style={StyleSheet.input} placeholder="Bio"   value={bio}       onChangeText={setBio} />
+            <TextInput style={StyleSheet.input} placeholder="Email" value={email}     onChangeText={setEmail} />
+            <TextInput style={StyleSheet.input} placeholder="Senha" value={password}  onChangeText={setPassword}  secureTextEntry />
+            <Button title="Cadastrar" onPress={handleRegister} />
+        </View>
+    );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    input: {
+        width: '80%', 
+        padding: 10, 
+        borderWidth: 1, 
+        marginVertical: 5
+    }
+});
+
+export default RegistroScreen
